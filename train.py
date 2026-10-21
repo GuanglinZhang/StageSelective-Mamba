@@ -87,13 +87,13 @@ def main():
         print(json.dumps(record, sort_keys=True), flush=True)
         if best is None or validation["loss"] < best["val_loss"]:
             best = {"epoch": epoch, "val_loss": validation["loss"], **validation}
-            torch.save(ema.module.state_dict(), checkpoint_dir / "best.pth")
+            torch.save(ema.module.state_dict(), checkpoint_dir / "ema_best_val_loss.pth")
 
     if ema.updates != optimizer_steps:
         raise RuntimeError("EMA update count differs from optimizer step count")
     selection = {
         "dataset": config["dataset"],
-        "checkpoint": "checkpoints/best.pth",
+        "checkpoint": "checkpoints/ema_best_val_loss.pth",
         "checkpoint_policy": "EMA minimum validation loss",
         "ema_decay": config["ema_decay"],
         "ema_updates": ema.updates,

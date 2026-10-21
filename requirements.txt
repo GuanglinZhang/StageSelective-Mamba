@@ -2,7 +2,10 @@
 torch==1.13.0+cu117
 torchvision==0.14.0+cu117
 mamba-ssm==1.0.1
+causal-conv1d==1.0.0
+triton==2.0.0
 timm==0.4.12
+packaging>=21
 numpy>=1.21,<2
 scipy>=1.7
 Pillow>=8

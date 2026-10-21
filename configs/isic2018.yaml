@@ -1,0 +1,13 @@
+dataset: ISIC2018
+split_counts: {train: 1815, val: 259, test: 520}
+input_size: 256
+seed: 42
+epochs: 250
+batch_size: 8
+num_workers: 0
+amp: false
+optimizer: {name: AdamW, lr: 0.001, weight_decay: 0.01}
+scheduler: {name: CosineAnnealingLR, T_max: 50, eta_min: 0.00001}
+ema_decay: 0.999
+checkpoint_policy: ema_minimum_validation_loss
+threshold: 0.5
