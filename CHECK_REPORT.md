@@ -30,13 +30,4 @@ The packaging workstation has Python 3.10.9, CPU-only PyTorch 1.12.1, and does n
 3. PH2 normalization is computed from the complete 200-image PH2 evaluation array, followed by per-image min-max scaling. It does not reuse ISIC2017 normalization statistics; this matches the audited PH2 implementation.
 4. The formal main protocol uses EMA decay 0.999 and selects `ema_best_val_loss.pth` solely by minimum validation loss. The cleaned code now uses the same checkpoint name and policy.
 
-## Data and licensing issues that remain unresolved
 
-- The repository reproduces the documented UltraLight VM-UNet split method and records all generated IDs. Depositing the historical manifest, if later recovered, would remove the remaining filesystem-order ambiguity.
-- PH2 explicitly prohibits redistribution and commercial use. The repository can provide only the official download link and preparation code unless written permission is obtained. Confirm with the PAA editor whether this satisfies the mandatory data-access requirement.
-- The local UltraLight VM-UNet upstream snapshot contains an MIT license. The referenced PSMamba repository exposes no license file in the audited material. Permission/licensing for public redistribution of the adapted GFC-Mamba code must be resolved.
-- No project-level open-source license should be added until the PSMamba-derived code status and the authors' preferred license are confirmed.
-
-## Publication readiness
-
-The project structure and executable workflow are ready to upload to GitHub. Before describing the repository as a fully licensed open-source release, the authors should: (1) run `verify_model.py` in the pinned CUDA environment, (2) retain and publish the generated split manifests where dataset terms allow, and (3) resolve the PSMamba-derived code license and add an appropriate repository license.
