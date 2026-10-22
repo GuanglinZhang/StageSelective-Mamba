@@ -115,4 +115,4 @@ CHECK_REPORT.md      lightweight validation report and known limitations
 AVAILABILITY.md      manuscript availability-statement drafts
 ```
 
-See `CHECK_REPORT.md` before publishing or resubmitting.
+
